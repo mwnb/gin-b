@@ -1,11 +1,14 @@
 package middleware
 
 import (
-	"fmt"
-
 	"github.com/gin-gonic/gin"
 )
 
-func RequestBefore(ctx *gin.Context) {
-	fmt.Println(ctx.Request.URL.Path, "<<<-QaQ")
+func requestBefore(ctx *gin.Context) {
+	// 验证 token
+	if true {
+
+	} else {
+		ctx.Abort()
+	}
 }

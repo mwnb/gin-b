@@ -1,0 +1,1 @@
+set GIN_ENV=PRODUCTION && go build -o application *.go

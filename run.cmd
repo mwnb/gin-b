@@ -1,0 +1,1 @@
+set GIN_ENV=DEVELOPMENT && air
