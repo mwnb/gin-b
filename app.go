@@ -4,6 +4,8 @@ import (
 	"gin-b/middleware"
 	"gin-b/routers"
 
+	_ "gin-b/env"
+
 	"github.com/gin-gonic/gin"
 )
 

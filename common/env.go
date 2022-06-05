@@ -1,0 +1,6 @@
+package common
+
+const (
+	DEVELOPMENT = "DEVELOPMENT"
+	PRODUCTION  = "PRODUCTION"
+)
