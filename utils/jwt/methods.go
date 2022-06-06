@@ -29,7 +29,7 @@ func ParseToken(token string) (*JwtData, error) {
 		return secretKey, nil
 	})
 	if tokenClaims != nil {
-		if claims, ok := tokenClaims.Claims.(*JwtData); ok && tokenClaims.Valid {
+		if claims, ok := tokenClaims.Claims.(*JwtData); ok {
 			return claims, nil
 		}
 	}

@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"gin-b/utils/jwt"
 	_ "gin-b/utils/jwt"
 	"gin-b/utils/res"
 	"net/http"
@@ -10,12 +11,16 @@ import (
 
 func requestBefore(ctx *gin.Context) {
 	// 验证 token
-	if true {
-
-	} else {
+	token := ctx.Request.Header["Token"]
+	jd, err := jwt.ParseToken(token[0])
+	if err != nil {
 		ctx.JSON(http.StatusForbidden, res.ResponseFail(gin.H{
 			"auth": false,
 		}))
 		ctx.Abort()
+	} else {
+		ctx.Set("username", jd.Name)
+		ctx.Set("account", jd.Account)
+		ctx.Set("extra", jd.Extra)
 	}
 }
