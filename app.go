@@ -11,6 +11,8 @@ import (
 
 func main() {
 	app := gin.Default()
+	// 开发使用
+	routers.MountDevRouter(app)
 	middleware.UseMiddleWare(app)
 	routers.MountRouter(app)
 	run(app)

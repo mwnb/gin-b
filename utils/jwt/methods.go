@@ -19,8 +19,8 @@ func CreateToken(name, account, extra string) (string, error) {
 			Issuer:    "it is me",
 		},
 	}
-	tokenClaims := jwt.NewWithClaims(jwt.SigningMethodES256, jd)
-	token, err := tokenClaims.SignedString(secretKey)
+	tokenClaims := jwt.NewWithClaims(jwt.SigningMethodHS256, jd)
+	token, err := tokenClaims.SignedString([]byte(secretKey))
 	return token, err
 }
 

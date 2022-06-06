@@ -18,4 +18,6 @@ func (h *home) GetBanner() gin.HandlerFunc {
 	return homeService.GetBanner
 }
 
-var HomeController home
+var HomeController home = home{
+	Name,
+}
