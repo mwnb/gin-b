@@ -2,7 +2,7 @@ package routers
 
 import (
 	"gin-b/common"
-	devgentoken "gin-b/controller/dev_gen_token"
+	genToken "gin-b/controller/dev/gen_token"
 	"gin-b/env"
 	"gin-b/options"
 
@@ -14,6 +14,6 @@ func MountDevRouter(engine *gin.Engine) {
 
 	if env.GIN_ENV == common.DEVELOPMENT {
 		devRouter := router.Group("/dev")
-		devRouter.GET("/genToken", devgentoken.DevGenTokenController.GenToken())
+		devRouter.GET("/genToken", genToken.DevGenTokenController.GenToken())
 	}
 }

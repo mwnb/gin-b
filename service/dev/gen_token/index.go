@@ -1,4 +1,4 @@
-package devgentoken
+package gentoken
 
 import (
 	"gin-b/utils/jwt"
@@ -17,7 +17,7 @@ func GenToken(ctx *gin.Context) {
 			"token":   "",
 		}))
 	} else {
-		ctx.JSON(http.StatusInternalServerError, res.ResponseSuccess(gin.H{
+		ctx.JSON(http.StatusOK, res.ResponseSuccess(gin.H{
 			"message": "gen token success",
 			"token":   token,
 		}))

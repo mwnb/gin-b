@@ -1,7 +1,7 @@
 package devgentoken
 
 import (
-	devgentokenService "gin-b/service/dev_gen_token"
+	gentokenService "gin-b/service/dev/gen_token"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,7 +15,7 @@ type devGenToken struct {
 }
 
 func (d *devGenToken) GenToken() gin.HandlerFunc {
-	return devgentokenService.GenToken
+	return gentokenService.GenToken
 }
 
 var DevGenTokenController devGenToken = devGenToken{
