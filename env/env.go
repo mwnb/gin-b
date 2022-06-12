@@ -2,7 +2,6 @@ package env
 
 import (
 	"os"
-	"strings"
 )
 
 var (
@@ -10,13 +9,7 @@ var (
 )
 
 func getGinEnv() {
-	env := os.Environ()
-	for _, v := range env {
-		if strings.HasPrefix(v, "GIN_ENV") {
-			GIN_ENV = strings.Split(v, "=")[1]
-			break
-		}
-	}
+	GIN_ENV = os.Getenv("GIN_ENV")
 }
 
 func init() {
