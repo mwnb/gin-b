@@ -1,1 +1,1 @@
-export GIN_ENV=PRODUCTION && go build -o application *.go
+export GIN_ENV=PRODUCTION && go build -o dist/application *.go
