@@ -16,15 +16,3 @@
 ```bash
     sh ./build.sh
 ```
-
-### 2.2 win dev
-
-```bash
-    start cmd ./run.cmd
-```
-
-### 3.2 win build
-
-```bash
-    start cmd ./build.cmd
-```

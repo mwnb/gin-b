@@ -14,6 +14,8 @@ func MountDevRouter(engine *gin.Engine) {
 
 	if env.GIN_ENV == common.DEVELOPMENT {
 		devRouter := router.Group("/dev")
-		devRouter.GET("/genToken", genToken.DevGenTokenController.GenToken())
+		{
+			devRouter.GET("/genToken", genToken.DevGenTokenController.GenToken())
+		}
 	}
 }

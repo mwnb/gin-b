@@ -14,3 +14,10 @@ func responseBase(flag bool) func(gin.H) gin.H {
 var ResponseSuccess = responseBase(true)
 
 var ResponseFail = responseBase(false)
+
+func ResponseError(e error) gin.H {
+	return gin.H{
+		"success": false,
+		"error":   e.Error(),
+	}
+}

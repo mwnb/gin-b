@@ -12,5 +12,7 @@ func MountRouter(engine *gin.Engine) {
 	router := engine.Group(options.PRE_FIX_PATH)
 
 	homeRouter := router.Group("/home")
-	homeRouter.GET("/banner", home.HomeController.GetBanner())
+	{
+		homeRouter.GET("/banner", home.HomeController.GetBanner())
+	}
 }
