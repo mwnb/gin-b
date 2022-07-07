@@ -13,6 +13,7 @@ func MountRouter(engine *gin.Engine) {
 
 	homeRouter := router.Group("/home")
 	{
-		homeRouter.GET("/banner", home.HomeController.GetBanner())
+		homeRouter.GET("/getHomeImages", home.HomeController.GetHomeImages())
+		homeRouter.GET("/getCarousel", home.HomeController.GetCarousel())
 	}
 }

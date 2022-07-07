@@ -14,8 +14,12 @@ type home struct {
 	Name string
 }
 
-func (h *home) GetBanner() gin.HandlerFunc {
-	return homeService.GetBanner
+func (h *home) GetHomeImages() gin.HandlerFunc {
+	return homeService.GetHomeImages
+}
+
+func (h *home) GetCarousel() gin.HandlerFunc {
+	return homeService.GetCarousel
 }
 
 var HomeController home = home{
